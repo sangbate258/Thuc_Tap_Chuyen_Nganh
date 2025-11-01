@@ -1,0 +1,9 @@
+# Chặn tất cả thư mục node_modules ở bất kỳ đâu
+**/node_modules/
+
+# Chặn tất cả thư mục cấu hình IDE ở bất kỳ đâu
+**/.idea/
+
+# Các file log
+*.log
+npm-debug.log*
