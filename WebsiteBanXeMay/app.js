@@ -1,6 +1,8 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+const { engine } = require('express-handlebars');
+var app = express();
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
@@ -16,8 +18,18 @@ var blog_detailRouter = require('./routes/blog_detail');
 var teamRouter = require('./routes/team');
 var pricingRouter = require('./routes/pricing');
 var contactRouter = require('./routes/contact');
+
+var adminRouter = require('./routes/admin');
 var app = express();
 
+app.engine('hbs',
+    engine({
+        extname: 'hbs',
+        defaultLayout: 'layouts',
+        partialsDir: path.join(__dirname, 'views', 'partials'),
+        layoutsDir: path.join(__dirname, 'views', 'layouts'),
+    })
+);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -41,6 +53,7 @@ app.use('/team',teamRouter);
 app.use('/pricing',pricingRouter);
 app.use('/contact',contactRouter);
 
+app.use('/admin', adminRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
