@@ -1,0 +1,204 @@
+/*********************baseui****************/
+.card .btn{
+ margin-top:5px;
+ margin-bottom:5px;
+ box-shadow: 0px 0px 8px 1px #d8e2ef;
+font-size:16px;
+ }
+.base_dropdown_l .btn{
+ margin-top:5px;
+ margin-bottom:5px;
+ }
+.base_modal_l .btn{
+margin-top:5px;
+margin-bottom:5px; 
+ }
+.base_offc_l .btn{
+margin-top:5px;
+margin-bottom:5px; 
+ }
+.card .progress{
+margin-top:10px; 
+ }
+.base_tooltips_l .btn{
+margin-top:5px;
+margin-bottom:5px; 
+ }
+.base_typo_l ul{
+list-style:disc;
+padding-left: 2rem;
+ }
+.base_typo_l1 ul{
+padding-left: 2rem;
+ }
+.card-header h6{
+margin-bottom:0; 
+ }
+.badge {
+box-shadow: 0px 0px 4px 0.5px #d8e2ef;
+font-size:12px;
+margin-top:5px;
+}
+.breadcrumb-item.active {
+color:#2c7be5;
+}
+.breadcrumb-item {
+font-weight:bold;
+}
+.bg-secondary .card-text{
+color:#fff; 
+ }
+.bg-primary p{
+color:#fff; 
+ }
+.bg-success p{
+color:#fff; 
+ }
+.bg-info p{
+color:#fff; 
+ }
+.bg-warning p{
+color:#fff; 
+ }
+.bg-danger p{
+color:#fff; 
+ }
+.list-group-item {
+ box-shadow: 0px 0px 8px 1px #d8e2ef;
+ font-size:16px!important;
+}
+.list-group-item.active p{
+color:#fff; 
+ }
+.pagination li{
+ box-shadow: 0px 0px 8px 1px #d8e2ef; 
+ font-weight:bold;
+ }
+.pagination li a:hover{
+background:#2c7be5;
+color:#fff;
+ }
+.base_aacor  .btn {
+box-shadow:none;
+}
+/*********************baseui_end****************/
+
+
+@media screen and (max-width : 767px){
+.card .btn{
+margin-bottom:10px; 
+ }
+.card{
+margin-top:10px; 
+ }
+.base_aacor_l {
+margin-top:10px; 
+ }
+.base_badges_l {
+margin-top:10px;  
+ }
+.base_button_l {
+margin-top:10px; 
+ }
+.base_card_i{
+margin-top:10px; 
+ }
+.base_card1i{
+margin-top:10px;  
+ }
+.base_carousel_l{
+margin-top:10px; 
+ }
+.base_dropdown_l{
+margin-top:10px; 
+ }
+.base_listg_l{
+margin-top:10px;  
+ }
+.base_modal_l {
+margin-top:10px; 
+ }
+.base_noti_lil{
+margin-top:10px;
+margin-bottom:10px;   
+ }
+.base_offc_l {
+margin-top:10px; 
+ }
+.base_place_li .card{
+margin-top:10px;  
+ }
+.base_place_l {
+margin-top:10px; 
+ }
+.base_pagi_l {
+margin-top:10px;  
+ }
+.base_prog_l {
+margin-top:10px;   
+ }
+.base_spinner_l {
+margin-top:10px;  
+ }
+.base_spinner_l .btn{
+margin-top:10px;  
+ }
+.base_tabs_l {
+margin-top:10px;  
+ }
+.base_tooltips_l {
+margin-top:10px;  
+ }
+.base_typo_l {
+margin-top:10px; 
+ }
+.base_typo_l1 {
+margin-top:10px;  
+ }
+ }
+@media (min-width:768px) and (max-width:991px) {
+.card{
+margin-top:10px; 
+ }
+.card .btn{
+margin-bottom:10px; 
+ }
+.base_badges_l {
+margin-top:10px; 
+ }
+.base_card_i{
+margin-top:10px;  
+ }
+.base_listg_l{
+margin-top:10px;  
+ }
+.base_place_li .card{
+margin-top:10px;  
+ }
+.base_pagi_l {
+margin-top:10px;  
+ }
+.base_spinner_l .btn{
+margin-top:10px;  
+ }
+.base_tabs_l {
+margin-top:10px;  
+ }
+.base_typo_l1 {
+margin-top:10px;  
+ }
+.base_typo_l {
+margin-top:10px;  
+ }
+ }
+@media (min-width:992px) and (max-width:1200px) {
+.base_card_i{
+margin-top:10px;  
+ }
+.card .btn{
+margin-bottom:10px; 
+ }
+.card{
+margin-top:10px; 
+ }
+ }

@@ -1,0 +1,44 @@
+/*********************form****************/
+
+/*********************form_end****************/
+
+
+@media screen and (max-width : 767px){
+.base_formbil{
+margin-top:10px; 
+ }
+.base_formb_l {
+margin-top:10px; 
+ }
+.form_valid_l {
+margin-top:10px; 
+ }
+.form_wizard_l {
+margin-top:10px; 
+ }
+.card{
+margin-top:10px; 
+ }
+ }
+@media (min-width:768px) and (max-width:991px) {
+.base_formbil{
+margin-top:10px; 
+ }
+.base_formb_l {
+margin-top:10px; 
+ }
+.form_wizard_l {
+margin-top:10px; 
+ }
+.card{
+margin-top:10px; 
+ }
+ }
+@media (min-width:992px) and (max-width:1200px) {
+.base_formbil{
+margin-top:10px; 
+ }
+.card{
+margin-top:10px; 
+ }
+ }

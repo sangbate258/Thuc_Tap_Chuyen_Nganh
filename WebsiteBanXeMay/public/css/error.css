@@ -1,0 +1,30 @@
+/*********************error****************/
+#error{
+padding-top:40px;
+padding-bottom:40px;
+background:#f4f4f4; 
+ }
+.error_1{
+width:40%;
+margin-left:auto;
+margin-right:auto;  
+  }
+.error_1i{
+padding:40px; 
+ }
+/*********************error_end****************/
+
+
+@media screen and (max-width : 767px){
+.error_1{
+width:100%;
+margin-left:auto;
+margin-right:auto;  
+  }
+ }
+@media (min-width:768px) and (max-width:991px) {
+
+ }
+@media (min-width:992px) and (max-width:1200px) {
+
+ }

@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Admin Console</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/admin/css/bootstrap.min.css" rel="stylesheet" >
+    <link href="/admin/css/font-awesome.min.css" rel="stylesheet" >
+    <link href="/admin/css/style.css" rel="stylesheet">
+    <link href="/admin/css/nav.css" rel="stylesheet">
+    <link href="/admin/css/global.css" rel="stylesheet">
+    <link href="/admin/css/dashboard.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/js/codebase/dhtmlxcalendar.css"/>
+    <script src="/js/codebase/dhtmlxcalendar.js"></script>
+    <script>
+        var myCalendar;
+        function doOnLoad() {
+            myCalendar = new dhtmlXCalendarObject(["cal_1","cal_2", "cal_3"]);
+        }
+    </script>
+    <script src="/js/chart.min.js"></script>
+    <link href="/admin/css/table.css" rel="stylesheet">
+
+</head>
+<body onLoad="doOnLoad();">
+
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/admin"><h4>ADMINISTRATOR</h4></a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <ul class="nav hide">
+
+        <li class="nav-item sign_box_1">
+            <a class="nav-link  text-light" href="#"><i class="fa fa-comment"></i> 3</a>
+        </li>
+
+
+        <li class="nav-item dropdown notification">
+            <a class="nav-link dropdown-toggle text-white  border-0" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><button type="button" class="border-0 btn bg-dark text-white   position-relative">
+                <i class="fa fa-bell"></i>
+                <span class="position-absolute start-100 translate-middle badge rounded-pill bg-danger" style="top:5px;">
+    3+
+    <span class="visually-hidden">unread messages</span>
+  </span>
+            </button></a>
+            <ul class="dropdown-menu drop_1" style="left:auto; right:0; min-width:300px;">
+                <li class="noti_p">Notification <span class="pull-right"><a href="#">Clear All</a></span></li>
+                <li class="noti_p1">
+                    <div class="noti_i p-2  row m-0">
+                        <div class="col-sm-3">
+                            <div class="noti_il">
+                                <a href="#"><img src="/admin/img/1.jpg" alt="abc" class="rounded-circle w-100"></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-9 p-0">
+                            <div class="noti_ir">
+                                <p class="mb-0">Caleb Flakelar commented on Admin
+                                    <small class="text-muted font-13">1 min ago</small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+                <li class="noti_p1">
+                    <div class="noti_i p-2  row m-0">
+                        <div class="col-sm-3">
+                            <div class="noti_il">
+                                <a href="#"><img src="/admin/img/1.jpg" alt="abc" class="rounded-circle w-100"></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-9 p-0">
+                            <div class="noti_ir">
+                                <p class="mb-0">Caleb Flakelar commented on Admin
+                                    <small class="text-muted font-13">1 min ago</small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+                <li class="noti_p1">
+                    <div class="noti_i p-2  row m-0">
+                        <div class="col-sm-3">
+                            <div class="noti_il">
+                                <a href="#"><img src="/admin/img/1.jpg" alt="abc" class="rounded-circle w-100"></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-9 p-0">
+                            <div class="noti_ir">
+                                <p class="mb-0">Caleb Flakelar commented on Admin
+                                    <small class="text-muted font-13">1 min ago</small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+                <li class="noti_p1 border-0">
+                    <div class="noti_i p-2  row m-0">
+                        <div class="col-sm-3">
+                            <div class="noti_il">
+                                <a href="#"><img src="/admin/img/1.jpg" alt="abc" class="rounded-circle w-100"></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-9 p-0">
+                            <div class="noti_ir">
+                                <p class="mb-0">Caleb Flakelar commented on Admin
+                                    <small class="text-muted font-13">1 min ago</small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item sign_box dropdown">
+            <a class="nav-link dropdown-toggle text-white  border-0" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img alt="abc" class="rounded-circle" width="30"height="30" src="/admin/img/1.jpg">Eget Nulla</a>
+            <ul class="dropdown-menu drop_2" style="left:auto; right:0; min-width:200px;">
+                <li class="small" style="padding: 0.25rem 1rem;">Welcome !</li>
+                <li><a class="dropdown-item" href="#"><i class="fa fa-user"></i> My Account</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa fa-gear"></i> Settings</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa fa-life-bouy"></i> Support</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Lock Screen</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Logout</a></li>
+            </ul>
+        </li>
+    </ul>
+</header>
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" style="overflow-y: auto; max-height:inherit;">
+            <div class="position-sticky">
+
+                <ul class="nav flex-column mb-2 list-unstyled ps-0">
+                    <li class="nav-item">
+                        <a href="/admin" class="btn btn-toggle align-items-center rounded w-100 tag_m  no_drop active_tab"><i class="fa fa-dashboard icon-before"></i><span class="btn">Dashboard</span></a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a href="javascript:void(0);" class="btn btn-toggle align-items-center rounded collapsed  w-100 tag_m" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false"><i class="fa fa-shopping-cart icon-before"></i><span class="btn">Ecommerce</span><i class="fa fa-chevron-right"></i></a>
+                        <div class="collapse" id="orders-collapse" style="">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="/admin/ecommerce_prod" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Product</span></a></li>
+                                <li><a href="/admin/ecommerce_prod_details" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Product Details</span></a></li>
+                                <li><a href="/admin/ecommerce_orders" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Order</span></a></li>
+                                <li><a href="/admin/ecommerce_orders_detail" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Order Details</span></a></li>
+                                <li><a href="/admin/ecommerce_customers" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Customers</span></a></li>
+                                <li><a href="/admin/ecommerce_sellers" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Sellers</span></a></li>
+
+                                <li><a href="/admin/cart" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Shopping Cart</span></a></li>
+
+                                <li><a href="/admin/checkout" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Checkout</span></a></li>
+
+                                <li><a href="/admin/billing" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Billing</span></a></li>
+
+                                <li><a href="/admin/invoice" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Invoice</span></a></li>
+
+                                <li><a href="/admin/pricing" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Pricing</span></a></li>
+
+                                <li><a href="/admin/category" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Category</span></a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a href="javascript:void(0);" class="btn btn-toggle align-items-center rounded collapsed w-100 tag_m" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false"><i class="fa fa-briefcase icon-before"></i><span class="btn">Projects</span><i class="fa fa-chevron-right"></i></a>
+                        <div class="collapse" id="account-collapse" style="">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="project_list.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Lists</span></a></li>
+                                <li><a href="project_list_detail.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Details</span></a></li>
+                                <li><a href="create_project.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Create Project</span></a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a href="javascript:void(0);" class="btn btn-toggle align-items-center rounded collapsed w-100 tag_m" data-bs-toggle="collapse" data-bs-target="#Authent-collapse" aria-expanded="false"><i class="fa fa-lock icon-before"></i><span class="btn">Authentication</span><i class="fa fa-chevron-right"></i></a>
+                        <div class="collapse" id="Authent-collapse" style="">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a target="_blank"  href="authent_login.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Login</span></a></li>
+                                <li><a target="_blank"  href="authent_logout.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i>  Logout</span></a></li>
+                                <li><a target="_blank"  href="authent_register.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i>  Register</span></a></li>
+
+                                <li><a target="_blank"  href="authent_forgot.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i>  Forgot Password</span></a></li>
+
+                                <li><a target="_blank"  href="authent_confirm_mail.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i>  Confirm Mail</span></a></li>
+
+                                <li><a target="_blank"  href="authent_reset_pass.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i>  Reset Password</span></a></li>
+
+                                <li><a target="_blank"  href="authent_error.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i>  Error</span></a></li>
+
+                                <li><a target="_blank"  href="authent_card_login.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i>  Card Login</span></a></li>
+
+                                <li><a target="_blank"  href="authent_card_logout.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i>  Card Logout</span></a></li>
+
+                                <li><a target="_blank"  href="authent_card_register.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i>  Card Register</span></a></li>
+
+                                <li><a target="_blank"  href="authent_card_forgot.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i>  Card Forgot</span></a></li>
+
+                                <li><a target="_blank"  href="authent_card_confirm_mail.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i>  Card Confirm Mail</span></a></li>
+
+                                <li><a target="_blank"  href="authent_card_reset_pass.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i>  Card Reset Pass</span></a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a href="javascript:void(0);" class="btn btn-toggle align-items-center rounded collapsed w-100 tag_m" data-bs-toggle="collapse" data-bs-target="#pages-collapse" aria-expanded="false"><i class="fa fa-copy icon-before"></i><span class="btn">Pages</span><i class="fa fa-chevron-right"></i></a>
+                        <div class="collapse" id="pages-collapse" style="">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a  href="profile.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Profile</span></a></li>
+                                <li><a target="_blank" href="authen_login.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Login</span></a></li>
+                                <li><a target="_blank" href="login2.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Login 2</span></a></li>
+                                <li><a target="_blank" href="error.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Error</span></a></li>
+                                <li><a target="_blank" href="authen_register.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Register</span></a></li>
+                                <li><a target="_blank" href="authen_logout.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Logout</span></a></li>
+                                <li><a target="_blank" href="authen_recover.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Recover Password</span> </a></li>
+                                <li><a target="_blank" href="authen_lock_screen.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Lock Screen</span></a></li>
+                                <li><a target="_blank" href="authen_confirm_mail.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Confirm Mail</span> </a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a href="javascript:void(0);" class="btn btn-toggle align-items-center rounded collapsed w-100 tag_m" data-bs-toggle="collapse" data-bs-target="#base-collapse" aria-expanded="false"><i class="fa fa-diamond icon-before"></i><span class="btn">Base UI</span><i class="fa fa-chevron-right"></i></a>
+                        <div class="collapse" id="base-collapse" style="">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="base_accordions.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Accordions</span></a></li>
+                                <li><a href="base_alerts.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Alerts</span></a></li>
+                                <li><a href="base_badges.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Badges</span> </a></li>
+                                <li><a href="base_breadcrumb.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Breadcrumb</span></a></li>
+                                <li><a href="base_buttons.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Buttons</span> </a></li>
+                                <li><a href="base_card.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Cards</span></a></li>
+                                <li><a href="base_carousel.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Carousel</span></a></li>
+                                <li><a href="base_dropdown.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Dropdowns</span></a></li>
+                                <li><a href="base_grid.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Grid</span></a></li>
+                                <li><a href="base_listgroup.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> List Group</span> </a></li>
+                                <li><a href="base_modals.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Modals</span></a></li>
+                                <li><a href="base_notifi.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Notifications</span></a></li>
+                                <li><a href="base_offcanvas.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Offcanvas</span></a></li>
+                                <li><a href="base_placeh.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Placeholders</span> </a></li>
+                                <li><a href="base_pagination.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Pagination</span></a></li>
+                                <li><a href="base_progress.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Progress</span></a></li>
+                                <li><a href="base_spinners.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Spinners</span></a></li>
+                                <li><a href="base_tabs.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Tabs</span> </a></li>
+                                <li><a href="base_tooltips.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Tooltips</span></a></li>
+                                <li><a href="base_typo.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Typography </span></a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a href="javascript:void(0);" class="btn btn-toggle align-items-center rounded collapsed w-100 tag_m" data-bs-toggle="collapse" data-bs-target="#Forms-collapse" aria-expanded="false"><i class="fa fa-file icon-before"></i><span class="btn">Forms</span><i class="fa fa-chevron-right"></i></a>
+                        <div class="collapse" id="Forms-collapse" style="">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="form_basic.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Basic Elements</span></a></li>
+                                <li><a href="form_validation.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Validation</span></a></li>
+                                <li><a href="form_wizard.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Wizard</span></a></li>
+                                <li><a href="form.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i>Wordpress  Form</span></a></li>
+                                <li><a href="list.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i>Wordpress List</span></a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a href="javascript:void(0);" class="btn btn-toggle align-items-center rounded collapsed w-100 tag_m" data-bs-toggle="collapse" data-bs-target="#table-collapse" aria-expanded="false"><i class="fa fa-table icon-before"></i><span class="btn">Table</span><i class="fa fa-chevron-right"></i></a>
+                        <div class="collapse" id="table-collapse" style="">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="table_basic.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Basic Table</span></a></li>
+                                <li><a href="table_tow.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Tow Table</span></a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="chat.html" class="btn btn-toggle align-items-center rounded w-100 tag_m  no_drop"><i class="fa fa-comment-o icon-before"></i><span class="btn">Chat</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="chart_chartjs.html" class="btn btn-toggle align-items-center rounded w-100 tag_m  no_drop"><i class="fa fa-bar-chart icon-before"></i><span class="btn">Charts</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="email.html" class="btn btn-toggle align-items-center rounded w-100 tag_m  no_drop"><i class="fa fa-envelope icon-before"></i><span class="btn">Email</span></a>
+                    </li>
+                </ul>
+
+
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Saved reports</span>
+                    <a class="link-secondary" href="#" aria-label="Add a new report">
+                        <svg xmlns="#" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                    </a>
+                </h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link text-muted" href="#">
+                            <svg xmlns="#" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                            Integrations
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        {{{body}}}
+    </div>
+</div>
+
+
+<script src="/admin/js/bootstrap.bundle.min.js" ></script>
+<script src="/admin/js/global.js"></script>
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
+
+<script>
+    //================ Line chart With Multiple Lines ========
+
+    var xValues = [100,200,300,400,500,600,700,800,900,1000];
+
+    new Chart("multipleLineChart", {
+        labels: 'Multiple Line Chart',
+        type: "line",
+        data: {
+            labels: xValues,
+            datasets: [{
+                label: 'India',
+                data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
+                borderColor: "red",
+                fill: false
+            },{
+                label: 'US',
+                data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,7000],
+                borderColor: "green",
+                fill: false
+            },{
+                label: 'China',
+                data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
+                borderColor: "blue",
+                fill: false
+            }]
+        },
+        options: {
+            legend: {display: false}
+        }
+    });
+
+
+
+
+    //============== Bar Chart Single Dataset ============
+
+    var xValuesBarSingle = ["Italy", "France", "Spain", "USA", "Argentina"];
+    var yValuesBarSingle = [55, 49, 44, 24, 15];
+    var barColors = ["red", "green","blue","orange","brown"];
+
+    new Chart("barSingleChart", {
+        type: "bar",
+        data: {
+            labels: xValuesBarSingle,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValuesBarSingle
+            }]
+        },
+        options: {}
+    });
+
+
+    //================ Line chart With SINGLE Line ========
+
+    const labelsLine = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July'
+    ];
+
+    const dataLine = {
+        labels: labelsLine,
+        datasets: [{
+            label: 'Products',
+            backgroundColor: "rgba(0,0,0,1.0)",
+            borderColor: "rgba(0,0,0,0.1)",
+            data: [0, 10, 5, 2, 20, 30, 45],
+
+        }]
+    };
+
+    const config = {
+        type: 'line',
+        data: dataLine,
+        options: {}
+    };
+
+    const lineChart = new Chart(
+            document.getElementById('lineChart'),
+            config
+    );
+
+    //============== Pie Chart Single Dataset ============
+
+    var xValuesPieChart = ["Crome", "Firefox", "Safari", "Android", "Internet Explorer"];
+    var yValuesPieChart = [55, 49, 44, 24, 15];
+    var barColors = [
+        "#b91d47",
+        "#00aba9",
+        "#2b5797",
+        "#e8c3b9",
+        "#1e7145"
+    ];
+
+    new Chart("pieChart", {
+        type: "pie",
+        data: {
+            labels: xValuesPieChart,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValuesPieChart
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: "Production 2022"
+            }
+        }
+    });
+
+
+    //============== Bar Chart Multiple Datasets ============
+    const dataBar = [{x: 'Jan', net: 100, cogs: 50, gm: 50}, {x: 'Feb', net: 120, cogs: 55, gm: 75}];
+    const configBar = {
+        type: 'bar',
+        data: {
+            labels: ['Jan', 'Feb'],
+            datasets: [{
+                label: 'Net sales',
+                data: dataBar,
+                parsing: {
+                    yAxisKey: 'net'
+                },
+                backgroundColor: '#232e3c',
+                borderColor: '#32455c',
+            }, {
+                label: 'Cost of goods sold',
+                data: dataBar,
+                parsing: {
+                    yAxisKey: 'cogs'
+                }
+            }, {
+                label: 'Gross margin',
+                data: dataBar,
+                parsing: {
+                    yAxisKey: 'gm'
+                }
+            }]
+        },
+
+    };
+
+    const barChart = new Chart(
+            document.getElementById('barChart'),
+            configBar
+    );
+
+
+    //============== Area Chart ============
+    const configArea = {
+        type: 'line',
+        labels: 'Area Chart',
+        data: {
+            labels: ["Tokyo",	"Mumbai",	"Mexico City",	"Shanghai",	"Sao Paulo",	"New York",	"Karachi","Buenos Aires",	"Delhi","Moscow"],
+            datasets: [{
+                label: 'Series 1', // Name the series
+                data: [500,	50,	2424,	14040,	14141,	4111,	4544,	47,	5555, 6811], // Specify the data values array
+                fill: true,
+                borderColor: '#2196f3', // Add custom color border (Line)
+                backgroundColor: '#2196f3', // Add custom color background (Points and Fill)
+                borderWidth: 1 // Specify bar border width
+            },
+                {
+                    label: 'Series 2', // Name the series
+                    data: [1288,	88942,	44545,	7588,	99,	242,	1417,	5504,	75, 457], // Specify the data values array
+                    fill: true,
+                    borderColor: '#4CAF50', // Add custom color border (Line)
+                    backgroundColor: '#4CAF50', // Add custom color background (Points and Fill)
+                    borderWidth: 1 // Specify bar border width
+                }]
+        },
+        options: {
+            responsive: true, // Instruct chart js to respond nicely.
+            maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
+        }
+    };
+
+
+    const areaChart = new Chart(
+            document.getElementById('areaChart'),
+            configArea
+    );
+
+
+    // ===================== Function Chart ====================
+
+    var xValuesFunction = [];
+    var yValuesFunction = [];
+    generateDataFunctionChart("Math.sin(x)", 0, 10, 0.5);
+
+    new Chart("functionChart", {
+        type: "line",
+        data: {
+            labels: xValuesFunction,
+            datasets: [{
+                fill: false,
+                pointRadius: 2,
+                borderColor: "rgba(0,0,255,0.5)",
+                data: yValuesFunction
+            }]
+        },
+        options: {
+            legend: {display: false},
+            title: {
+                display: true,
+                text: "y = x * 2 + 7",
+                fontSize: 16
+            }
+        }
+    });
+    function generateDataFunctionChart(value, i1, i2, step = 1) {
+        for (let x = i1; x <= i2; x += step) {
+            yValuesFunction.push(eval(value));
+            xValuesFunction.push(x);
+        }
+    }
+
+
+    // ============== Linear Graphs ==============
+
+    var xValueslinear = [];
+    var yValueslinear = [];
+    generateData("x * 2 + 7", 0, 10, 0.5);
+
+    new Chart("linearChart", {
+        type: "line",
+        data: {
+            labels: xValueslinear,
+            datasets: [{
+                label: 'Linear Chart',
+                fill: false,
+                pointRadius: 3,
+                borderColor: "rgba(255,0,0,0.5)",
+                data: yValueslinear
+            }]
+        },
+        options: {
+            legend: {display: false},
+            title: {
+                display: true,
+                text: "y = x * 2 + 7",
+                fontSize: 16
+            }
+        }
+    });
+    function generateData(value, i1, i2, step = 1) {
+        for (let x = i1; x <= i2; x += step) {
+            yValueslinear.push(eval(value));
+            xValueslinear.push(x);
+        }
+    }
+
+
+    //============== Doughnut Chart Single Dataset ============
+
+    var xValuesDoughnut = ["Italy", "France", "Spain", "USA", "Argentina"];
+    var yValuesDoughnut = [55, 49, 44, 24, 15];
+    var barColors = [
+        "#b91d47",
+        "#00aba9",
+        "#2b5797",
+        "#e8c3b9",
+        "#1e7145"
+    ];
+
+    new Chart("doughnutChart", {
+        type: "doughnut",
+        data: {
+            labels: xValuesDoughnut,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValuesDoughnut
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: "Production 2022"
+            }
+        }
+    });
+
+</script>
+</body></html>

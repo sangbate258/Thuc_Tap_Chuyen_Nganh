@@ -1,0 +1,128 @@
+/*********************chat****************/
+.chat_pgl1li1 span{
+font-size:10px;
+color:#00d27a; 
+ }
+.chat_pgl1li1{
+top:16px;
+right:0;
+ }
+
+.chat_pgl1r .gear{
+display:none; 
+ }
+.chat_pgl1:hover .chat_pgl1r .gear{
+display:block; 
+ }
+.chat_pgl1:hover .chat_pgl1r .check{
+display:none; 
+ }
+.chat_pgl1{
+padding-top:15px;
+padding-bottom:15px; 
+ }
+.chat_pg{
+background:#fff;
+box-shadow: 0px 0px 8px 1px #fff;
+margin-left:0;
+margin-right:0; 
+ border: 1px solid #ebf3ff;
+
+ }
+.chat_pgl1:hover{
+border-left:4px solid  #00d27a;  
+ }
+.chat_pgl1{
+border-left:4px solid  #fff;
+margin-left:0;
+margin-right:0;  
+ }
+.act_chat{
+border-left:4px solid  #00d27a; 
+border-bottom:1px solid #ebf3ff; 
+ }
+.chat_pgl{
+height:400px;
+overflow-y: scroll;
+overflow-x:hidden;
+ }
+.chat_pgr1r ul li a{
+width:40px;
+height:30px;
+line-height:30px;
+display:inline-block;
+text-align:center;
+font-size:18px;
+border-radius: 0.2rem;
+box-shadow: 0px 0px 8px 1px #ddd; 
+ }
+.chat_pgr1{
+padding-top:15px;
+padding-bottom:15px; 
+ }
+.chat_pgr .chat_pgl1{
+border:none;
+ }
+.chat_pgr{
+height:400px;
+overflow-y: scroll;
+overflow-x:hidden;
+ }
+.chat_pg1l{
+  width:90%;
+  border: 1px solid #ddeafd;
+}
+.chat_pg1l .form-control {
+height: 50px;
+    /* width: 100%; */
+    font-size: 14px;
+    box-shadow: none;
+    border-radius: 0;
+    background: #ebf3ff;
+    color: #666;
+}
+.chat_pg1l .input-group .btn {
+background: #fff;
+margin-left: 0!important;
+padding: 5px 8px;
+font-size: 14px;
+border-radius: 0;
+border:none;
+color: #b6c1d2;
+}
+.chat_pg1ril .form-control {
+height: 50px;
+    /* width: 100%; */
+    font-size: 14px;
+    border: 1px solid #ddeafd;
+    box-shadow: none;
+    border-radius: 0;
+    background: #ebf3ff;
+    color: #666;
+}
+.chat_pg1rir ul li{
+font-weight:bold; 
+ }
+.chat_pg1{
+border-radius:0px 0px 5px 5px; 
+ }
+/*********************chat_end****************/
+
+
+@media screen and (max-width : 767px){
+.chat_pg1l{
+width:100%;
+margin-bottom:10px; 
+ }
+.chat_pgr1r ul li a {
+width: 30px;
+}
+ }
+@media (min-width:768px) and (max-width:991px) {
+.chat_pg1ri {
+margin-top:10px; 
+ }
+ }
+@media (min-width:992px) and (max-width:1200px) {
+
+ }
