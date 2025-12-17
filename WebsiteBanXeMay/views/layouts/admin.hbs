@@ -124,14 +124,18 @@
             </ul>
         </li>
         <li class="nav-item sign_box dropdown">
-            <a class="nav-link dropdown-toggle text-white  border-0" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img alt="abc" class="rounded-circle" width="30"height="30" src="/admin/img/1.jpg">Eget Nulla</a>
+            <a class="nav-link dropdown-toggle text-white  border-0" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img alt="abc" class="rounded-circle" width="30"height="30" src="/admin/img/1.jpg">{{#if user}}
+                {{user.firstName}} {{user.lastName}}
+
+
+            {{/if}}</a>
             <ul class="dropdown-menu drop_2" style="left:auto; right:0; min-width:200px;">
                 <li class="small" style="padding: 0.25rem 1rem;">Welcome !</li>
                 <li><a class="dropdown-item" href="#"><i class="fa fa-user"></i> My Account</a></li>
                 <li><a class="dropdown-item" href="#"><i class="fa fa-gear"></i> Settings</a></li>
                 <li><a class="dropdown-item" href="#"><i class="fa fa-life-bouy"></i> Support</a></li>
                 <li><a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Lock Screen</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Logout</a></li>
+                <li><a class="dropdown-item" href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
             </ul>
         </li>
     </ul>
@@ -233,7 +237,7 @@
                                 <li><a target="_blank" href="login2.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Login 2</span></a></li>
                                 <li><a target="_blank" href="error.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Error</span></a></li>
                                 <li><a target="_blank" href="authen_register.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Register</span></a></li>
-                                <li><a target="_blank" href="authen_logout.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Logout</span></a></li>
+                                <li><a target="_blank" href="/login" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Logout</span></a></li>
                                 <li><a target="_blank" href="authen_recover.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Recover Password</span> </a></li>
                                 <li><a target="_blank" href="authen_lock_screen.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Lock Screen</span></a></li>
                                 <li><a target="_blank" href="authen_confirm_mail.html" class="link-dark rounded w-100"><span><i style="font-size:8px; vertical-align:middle; margin-right:10px;" class="fa fa-circle-o"></i> Confirm Mail</span> </a></li>

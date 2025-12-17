@@ -84,12 +84,26 @@
                                 Contact Us
                             </a>
                         </li>
+                        {{#if user}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" style="font-weight: bold;">
+                                    <i class="fa fa-user"></i> Xin chào, {{user.firstName}} {{user.lastName}}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/logout">
+                                    <i class="fa fa-sign-out"></i> Logout
+                                </a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link dropdown-toggle" href="/customer" title="Visit home page">
-                                Customer
-                            </a>
-                        </li>
+                        {{else}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/login">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/register">Register</a>
+                            </li>
+                        {{/if}}
 
                     </ul>
                     <ul class="navbar-nav align-items-lg-center ms-auto">
@@ -173,6 +187,7 @@
         </div>
     </nav>
 </section>
+
 {{{body}}}
 
 <section id="footer" class="pt-5 pb-5 bg-dark">
@@ -263,6 +278,48 @@
 
 <script src="/home/js/bootstrap.bundle.min.js"></script>
 <script src="/home/js/theme.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+<script>
+        {{#if success_message}}
+        Swal.fire({
+            icon: 'success',
+            title: 'Thành công!',
+            text: '{{success_message}}',
+            showConfirmButton: false,
+            timer: 2000
+        });
+        {{/if}}
+
+        {{#if error_message}}
+        Swal.fire({
+            icon: 'error',
+            title: 'Có lỗi xảy ra',
+            text: '{{error_message}}',
+        });
+        {{/if}}
+
+        {{#if error}}
+        Swal.fire({
+            icon: 'error',
+            title: 'Lỗi đăng nhập',
+            text: '{{error}}',
+        });
+        {{/if}}
+
+        {{#if errors}}
+        let htmlErrors = '<div style="text-align: left;">';
+            {{#each errors}}
+            htmlErrors += '<p style="margin-bottom: 5px;">- {{this.message}}</p>';
+            {{/each}}
+        htmlErrors += '</div>';
+
+        Swal.fire({
+            icon: 'error',
+            title: 'Vui lòng kiểm tra lại:',
+            html: htmlErrors,
+        });
+        {{/if}}
+</script>
 </body>
 </html>

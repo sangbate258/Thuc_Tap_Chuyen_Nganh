@@ -2,13 +2,45 @@ var express = require('express');
 var router = express.Router();
 
 router.all('/*', function(req, res,next) {
-    res.app.locals.layout = 'admin';
-    next();
+    if(!req.isAuthenticated()) {
+        res.redirect('/login');
+    }
+    else{
+        res.app.locals.layout = 'admin';
+        next();
+    }
+
 })
+// function ensureAdmin(req, res, next) {
+//     if (req.isAuthenticated()) {
+//
+//         if (req.user.role === 'admin') {
+//             return next();
+//         } else {
+//             req.flash('error_message', 'Bạn không đủ quyền hạn để vào đây!');
+//             return res.redirect('/');
+//         }
+//     }
+//
+//     req.flash('error_message', 'Vui lòng đăng nhập để truy cập Admin!');
+//     res.redirect('/login');
+// }
+//
+// router.use(ensureAdmin);
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('admin/index', { title: 'Admin' });
+        res.render('admin/index', { title: 'Admin' });
 });
+router.get('/logout', (req, res) => {
+    req.logOut((err) => {
+        if (err) {
+            return res.status(500).send(err); // Handle the error appropriately
+        }
+        res.redirect('/'); // Redirect after logout
+    });
+
+})
 router.get('/product-add', function(req, res, next) {
     res.render('admin/product-add/product-add', { title: 'Admin' });
 });
