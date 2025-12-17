@@ -1,11 +1,14 @@
 var express = require('express');
 var router = express.Router();
-const { userAuthentication } = require('../helpers/authentication');
-router.all('/*', userAuthentication, function(req, res,next) {
 
+router.all('/*', function(req, res,next) {
+    if(!req.isAuthenticated()) {
+        res.redirect('/login');
+    }
+    else{
         res.app.locals.layout = 'admin';
         next();
-
+    }
 
 })
 // function ensureAdmin(req, res, next) {
@@ -27,9 +30,17 @@ router.all('/*', userAuthentication, function(req, res,next) {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-        res.render('admin/index', { title: 'Admin' });
+    res.render('admin/index', { title: 'Admin' });
 });
+router.get('/logout', (req, res) => {
+    req.logOut((err) => {
+        if (err) {
+            return res.status(500).send(err); // Handle the error appropriately
+        }
+        res.redirect('/'); // Redirect after logout
+    });
 
+})
 router.get('/product-add', function(req, res, next) {
     res.render('admin/product-add/product-add', { title: 'Admin' });
 });
