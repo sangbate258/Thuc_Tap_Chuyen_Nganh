@@ -1,35 +1,119 @@
 <main class="col-md-9 ms-sm-auto common col-lg-10 px-md-4">
-    <h2>Trang thêm category</h2>
-    <button type="button" class="btn btn-primary">Thêm mới</button>
-    <table class="table">
-    <thead>
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Quản lý Danh mục Xe</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <a href="/admin/category/create" class="btn btn-sm btn-primary">
+                <i class="fa fa-plus"></i> Thêm danh mục mới
+            </a>
+        </div>
+    </div>
 
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-    </tr>
-    <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-    </tr>
-    <tr>
-        <th scope="row">3</th>
-        <td>John</td>
-        <td>Doe</td>
-        <td>@social</td>
-    </tr>
-    </tbody>
-</table>
+    <!-- ✅ THÔNG BÁO FLASH (đẹp, rõ) -->
+    {{#if success_message}}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{success_message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {{/if}}
+
+    {{#if error_message}}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{error_message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {{/if}}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-white">
+                    <h6 class="mb-0 font-weight-bold"><i class="fa fa-list"></i> Danh sách hiện có</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-light">
+                            <tr>
+                                <th scope="col" style="width: 10%;">Hình ảnh</th>
+                                <th scope="col" style="width: 18%;">Tên danh mục</th>
+                                <th scope="col" style="width: 32%;">Mô tả</th>
+
+                                <!-- ✅ CỘT MỚI: Số xe đang dùng -->
+                                <th scope="col" style="width: 10%;">Số xe</th>
+
+                                <th scope="col" style="width: 15%;">Trạng thái</th>
+                                <th scope="col" style="width: 15%;">Hành động</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            {{#each categories}}
+                                <tr>
+                                    <td>
+                                        {{#if this.image}}
+                                            <img src="{{this.image}}" alt="{{this.name}}" class="img-thumbnail"
+                                                 style="width: 60px; height: 60px; object-fit: cover;">
+                                        {{else}}
+                                            <span class="text-muted small">No Image</span>
+                                        {{/if}}
+                                    </td>
+
+                                    <td class="fw-bold">{{this.name}}</td>
+
+                                    <td><small class="text-muted">{{this.description}}</small></td>
+
+                                    <!-- ✅ usedCount -->
+                                    <td>
+                                        {{#if this.usedCount}}
+                                            <span class="badge bg-danger p-2">{{this.usedCount}}</span>
+                                        {{else}}
+                                            <span class="badge bg-light text-dark border p-2">0</span>
+                                        {{/if}}
+                                    </td>
+
+                                    <td>
+                                        {{#if this.status}}
+                                            <span class="badge bg-success p-2">Đang hiện</span>
+                                        {{else}}
+                                            <span class="badge bg-secondary p-2">Đang ẩn</span>
+                                        {{/if}}
+                                    </td>
+
+                                    <td>
+                                        <a href="/admin/category/edit/{{this._id}}" class="btn btn-sm btn-outline-warning" title="Chỉnh sửa">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+
+                                        <form action="/admin/category/delete/{{this._id}}?_method=DELETE"
+                                              method="POST" style="display:inline-block;">
+                                            <button type="submit" class="btn btn-sm btn-outline-danger"
+                                                    onclick="return confirm('Bạn có chắc chắn muốn xóa danh mục: {{this.name}} không?\nDanh mục đang có {{this.usedCount}} sản phẩm sử dụng. Nếu > 0 hệ thống sẽ chặn xóa.');"
+                                                    title="Xóa">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </form>
+
+                                        {{#if this.usedCount}}
+                                            <div class="small text-danger mt-1">
+                                                <i class="fa fa-exclamation-triangle"></i> Đang được dùng
+                                            </div>
+                                        {{/if}}
+                                    </td>
+                                </tr>
+                            {{else}}
+                                <tr>
+                                    <td colspan="6" class="text-center py-4">
+                                        <p class="text-muted mb-0">Chưa có danh mục nào được tạo.</p>
+                                        <a href="/admin/category/create">Tạo ngay</a>
+                                    </td>
+                                </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </main>

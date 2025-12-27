@@ -5,17 +5,22 @@ const { engine } = require('express-handlebars');
 var app = express();
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+const methodOverride = require('method-override');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/admin');
-
+var categoryRouter = require('./routes/category');
+var productRouter = require('./routes/product');
+var { userAuthentication } = require('./helpers/authentication');
 app.engine('hbs',
     engine({
         extname: 'hbs',
         defaultLayout: 'home',
         partialsDir: path.join(__dirname, 'views', 'partials'),
         layoutsDir: path.join(__dirname, 'views', 'layouts'),
+        helpers: {
+            eq: (a, b) => a === b,
+        }
     })
 );
 // view engine setup
@@ -53,10 +58,12 @@ app.use((req, res, next) => {
     next();
 });
 //end database
+app.use(methodOverride('_method'));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/admin', adminRouter);
-
+app.use('/admin',userAuthentication, adminRouter);
+app.use('/admin/category',userAuthentication, categoryRouter);
+app.use('/admin/product',userAuthentication, productRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

@@ -1,0 +1,192 @@
+<main class="col-md-9 ms-sm-auto common col-lg-10 px-md-4">
+
+    <div class="row crm_1 mt-4">
+        <div class="col-md-3">
+            <div class="analytic_1l">
+                <h5 class="mb-0">Quản lý Xe Máy</h5>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="crm_1r pull-right">
+                <ul>
+                    <li class="col_3 d-inline-block"><a href="/admin">Dashboard</a> <i style="margin-left:5px; vertical-align:middle;" class="fa fa-chevron-right"></i></li>
+                    <li class="col_3 d-inline-block"> Sản phẩm</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row prod_1 m-0 bg-white" style="box-shadow: 0px 0px 8px 1px #d8e2ef; border:1px solid #deedff;">
+
+        <div class="col-md-4">
+            <div class="prod_1l">
+                <h6><a class="buttton_1" href="/admin/product/create">Thêm Xe Mới <i class="fa fa-plus-circle"></i></a></h6>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="prod_1r" style="text-align:right;">
+                <button type="button" class="btn btn-primary bg_1"><i class="fa fa-cog"></i></button>
+            </div>
+        </div>
+
+        <form method="get" action="/admin/product" class="prod_1i mt-3 row">
+            <div class="col-md-6">
+                <div class="prod_1il">
+                    <h6 class="d-inline-block">Hiển thị</h6>
+
+                    <select name="limit"
+                            style="width:100px; height:38px; display:inline-block; margin-left:5px; margin-right:5px;"
+                            class="form-select form-select-sm ms-1 me-1"
+                            onchange="this.form.submit()">
+                        <option value="10" {{#if (eq limit 10)}}selected{{/if}}>10</option>
+                        <option value="20" {{#if (eq limit 20)}}selected{{/if}}>20</option>
+                        <option value="-1" {{#if (eq limit -1)}}selected{{/if}}>Tất cả</option>
+                    </select>
+
+                    <h6 class="d-inline-block">xe</h6>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="prod_1ir" style="text-align:right;">
+                    <h6 class="d-inline-block">Tìm kiếm:</h6>
+                    <input class="form-control" name="keyword" value="{{keyword}}" type="text"
+                           style="width:200px; display:inline-block; margin-left:5px;"
+                           placeholder="Nhập tên xe/danh mục...">
+                    <button type="submit" class="btn btn-primary bg_1 ms-1">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <div class="table-responsive table_tow">
+            <table class="table table-striped mt-2 align-middle" style="border: 1px solid #deedff;">
+                <thead>
+                <tr>
+                    <th scope="col" style="width: 32%">Thông tin Xe</th>
+                    <th scope="col">Danh mục</th>
+                    <th scope="col">Năm SX</th>
+                    <th scope="col">Giá bán</th>
+                    <th scope="col">Tình trạng</th>
+                    <th scope="col">Trạng thái tin</th>
+                    <th scope="col">Hành động</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {{#each products}}
+                    <tr>
+                        <td>
+                            {{#if this.image}}
+                                <img style="width:50px; height:50px; float:left; margin-right:10px; object-fit: cover; border-radius: 4px;" src="{{this.image}}" alt="xe">
+                            {{else}}
+                                <img style="width:50px; height:50px; float:left; margin-right:10px;" src="/img/no-image.png" alt="no-img">
+                            {{/if}}
+
+                            <span class="d-block fw-bold">{{this.title}}</span>
+                            <span class="text-warning font_12">
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                            </span>
+                        </td>
+
+                        <td class="fw-bold text-muted">
+                            {{#if this.categoryName}}
+                                {{this.categoryName}}
+                            {{else}}
+                                <span class="text-danger">Chưa chọn</span>
+                            {{/if}}
+                        </td>
+
+                        <td>
+                            <span class="badge bg-light text-dark border">{{this.year}}</span>
+                        </td>
+
+                        <td class="text-danger fw-bold">
+                            {{this.price}}
+                        </td>
+
+                        <td>
+                            {{#if (eq this.condition "Mới 100%")}}
+                                <h6 class="bg_3 text-center font_12 p-1 mb-0 text-white" style="border-radius: 3px;">Xe Mới</h6>
+                            {{else}}
+                                <h6 class="bg_4 text-center text-white font_12 p-1 mb-0" style="border-radius: 3px;">Xe Cũ</h6>
+                            {{/if}}
+                        </td>
+
+                        <td>
+                            {{#if this.status}}
+                                <span class="badge bg-success p-2">Đang bán (Hiện)</span>
+                            {{else}}
+                                <span class="badge bg-secondary p-2">Ngưng bán (Ẩn)</span>
+                            {{/if}}
+                        </td>
+
+                        <td>
+                            <a href="/admin/product/edit/{{this._id}}" class="btn btn-sm btn-outline-primary" title="Sửa">
+                                <i class="fa fa-edit"></i>
+                            </a>
+
+                            <form action="/admin/product/delete/{{this._id}}?_method=DELETE" method="POST" style="display:inline-block;">
+                                <button type="submit" class="btn btn-sm btn-outline-danger"
+                                        onclick="return confirm('Bạn muốn xóa xe: {{this.title}}?');" title="Xóa">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                {{else}}
+                    <tr>
+                        <td colspan="7" class="text-center py-4">
+                            <p class="mb-2">Không có dữ liệu.</p>
+                            <a href="/admin/product/create" class="btn btn-sm btn-primary">Thêm xe ngay</a>
+                        </td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="prod_1i1 mt-3 row">
+            <div class="col-md-6">
+                <div class="prod_1i1l">
+                    <p class="mt-3 mb-0">
+                        Hiển thị {{pagination.from}} - {{pagination.to}} / {{pagination.total}} xe
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="prod_1i1r pages" style="text-align:right;">
+                    {{#if (eq limit -1)}}
+                    {{else}}
+                        {{#if (eq pagination.totalPages 1)}}
+                        {{else}}
+                            <ul class="mb-0">
+                                <li>
+                                    <a href="/admin/product?page={{pagination.prevPage}}&keyword={{keyword}}&limit={{limit}}">
+                                    <i class="fa fa-chevron-left"></i>
+                                    </a>
+                                </li>
+
+                                {{#each pagination.pages}}
+                                    <li class="{{#if isCurrent}}act{{/if}}">
+                                        <a href="/admin/product?page={{num}}&keyword={{../keyword}}&limit={{../limit}}">{{num}}</a>
+                                    </li>
+                                {{/each}}
+
+                                <li>
+                                    <a href="/admin/product?page={{pagination.nextPage}}&keyword={{keyword}}&limit={{limit}}">
+                                    <i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        {{/if}}
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>

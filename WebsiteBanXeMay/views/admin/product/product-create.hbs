@@ -1,0 +1,84 @@
+<main class="col-md-9 ms-sm-auto common col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Đăng bán Xe mới</h1>
+    </div>
+
+    {{#if error_message}}
+        <div class="alert alert-danger">{{error_message}}</div>
+    {{/if}}
+
+    <div class="row">
+        <div class="col-md-9">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <form action="/admin/product/create" method="POST">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label class="form-label fw-bold">Tên xe / Model <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" name="title"
+                                       placeholder="VD: Honda SH 150i 2022" required
+                                       value="{{form.title}}">
+                            </div>
+
+                            <!-- ✅ CATEGORY DYNAMIC -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Hãng sản xuất <span class="text-danger">*</span></label>
+                                <select class="form-select" name="category" required>
+                                    <option value="">-- Chọn hãng --</option>
+                                    {{#each categories}}
+                                        <option value="{{_id}}">{{name}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+
+
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Năm sản xuất</label>
+                                <input type="number" class="form-control" name="year" value="{{#if form.year}}{{form.year}}{{else}}2024{{/if}}">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Giá bán (VNĐ) <span class="text-danger">*</span></label>
+                                <input type="number" step="any" min="0" class="form-control" name="price"
+                                        required value="{{form.price}}">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Tình trạng xe</label>
+                                <select class="form-select" name="condition">
+                                    <option value="Xe Cũ">Xe Đã qua sử dụng</option>
+                                    <option value="Mới 100%">Xe Mới 100%</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label fw-bold">Link Hình ảnh</label>
+                                <input type="text" class="form-control" name="image"
+                                       placeholder="Paste link ảnh vào đây (https://...)" value="{{form.image}}">
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label fw-bold">Mô tả chi tiết</label>
+                                <textarea class="form-control" name="description" rows="4">{{form.description}}</textarea>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label fw-bold">Trạng thái tin</label>
+                                <select class="form-select" name="status">
+                                    <option value="true">Đang bán (Hiện)</option>
+                                    <option value="false">Ngưng bán (Ẩn)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 text-end">
+                            <a href="/admin/product" class="btn btn-secondary">Hủy</a>
+                            <button type="submit" class="btn btn-primary px-4">Đăng tin</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

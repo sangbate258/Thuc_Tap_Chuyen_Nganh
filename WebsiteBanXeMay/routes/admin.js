@@ -1,13 +1,10 @@
 var express = require('express');
 var router = express.Router();
-const { userAuthentication } = require('../helpers/authentication');
-router.all('/*', userAuthentication, function(req, res,next) {
-
+router.all('/*', function(req, res,next) {
         res.app.locals.layout = 'admin';
         next();
-
-
 })
+
 // function ensureAdmin(req, res, next) {
 //     if (req.isAuthenticated()) {
 //
@@ -30,12 +27,8 @@ router.get('/', function(req, res, next) {
         res.render('admin/index', { title: 'Admin' });
 });
 
-router.get('/product-add', function(req, res, next) {
-    res.render('admin/product-add/product-add', { title: 'Admin' });
-});
-router.get('/ecommerce_prod', function(req, res, next) {
-    res.render('admin/ecommerce_prod', { title: 'Admin' });
-});
+
+
 router.get('/ecommerce_prod_details', function(req, res, next) {
     res.render('admin/ecommerce_prod_details', { title: 'Admin' });
 });
@@ -67,8 +60,5 @@ router.get('/pricing', function(req, res, next) {
     res.render('admin/pricing', { title: 'Admin' });
 });
 
-router.get('/category', function(req, res, next) {
-    res.render('admin/category/category-list', { title: 'Admin' });
-});
 
 module.exports = router;
